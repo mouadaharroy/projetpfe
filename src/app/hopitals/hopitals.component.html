@@ -1,0 +1,45 @@
+
+<div class="container spacer">
+   
+    <button routerLink="/ajouterHopital" class="btn btn-primary">Ajouter hopital</button>
+  </div>
+<div class="container spacer">
+  <div class="panel panel-primary">
+  <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: blue"><div class="panel-heading">liste des hopitals</div></h2>
+
+  <div class="panel-body"></div>
+  <div class="form-group">
+  <label>Mot Clé:</label>
+   <input type="text"   [(ngModel)]="motCle" /> 
+   <button class="btn btn-primary" (click)="Chercher()">chercher</button>
+
+  </div>
+ <table class="table table-striped">
+ <tr>
+
+  <th>ID</th><th>Adress</th><th>Email</th><th>Departement</th><th>Tel</th><th>Modification</th><th>Supprimer</th>
+ </tr>
+ <tr *ngFor="let c of pageHopitals?.content">
+
+  <td><a routerLink="{{c.id}}">{{c.id}}</a></td>
+  <td>{{c.adresse}}</td>
+  <td>{{c.email}}</td>
+  <td>{{c.departement}}</td>
+  <td>{{c.tel}}</td>
+  <td><a (click)="onEditHopital(c.id)" class="clickable page-link">Edit</a></td>
+  <td><a (click)="onDeleHopital(c)" class="clickable page-link">Supprimer</a></td>
+    
+  </tr>
+
+
+ </table>
+ <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{'active':i==pageCurrant}" *ngFor="let o of pages;let i=index"><a class="clickable page-link" (click)="gotoPage(i)">{{i}}</a></li>
+    </ul>
+  </nav>
+
+  </div>
+   
+    
+    </div>

@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header"><i class="fa fa-table"></i> Authentification</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table id="default-datatable" class="table table-bordered">
+    <tr>
+      <td>Login</td><td><input type="text" [(ngModel)]="login"></td>
+    </tr>
+    <tr>
+      <td>Mot de passe</td><td><input type="password" [(ngModel)]="motPasse"></td>
+    </tr>
+    <tr><td></td><td><BUTTON class="btn btn-danger" (click)="Cnx()" >Submit</BUTTON></td></tr>
+  </table>
+  </div>
+  </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet>
+
+  
+    </router-outlet>
